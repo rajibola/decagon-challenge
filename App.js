@@ -9,8 +9,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import AppNavigator from './src/navigations/stack-navigation';
+import {Text} from 'react-native';
 
-const App: () => React$Node = () => {
+const App = () => {
   return <AppNavigator />;
 };
 

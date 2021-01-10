@@ -6,19 +6,16 @@ export const fonts = {
     fontSize: hp(18),
     lineHeight: hp(27),
     color: colors.dark,
-    letterSpacing: -hp(0.5),
   },
   regularText16: {
     fontSize: hp(16),
     lineHeight: hp(24),
     color: colors.dark,
-    letterSpacing: -hp(0.5),
   },
   regularText14: {
     fontSize: hp(14),
     lineHeight: hp(18),
     color: colors.dark,
-    letterSpacing: -hp(0.5),
   },
 
   boldText32: {
@@ -26,7 +23,6 @@ export const fonts = {
     lineHeight: hp(30),
     color: colors.dark,
     fontWeight: 'bold',
-    letterSpacing: -hp(0.5),
   },
 
   boldText18: {
@@ -34,7 +30,6 @@ export const fonts = {
     lineHeight: hp(27),
     color: colors.dark,
     fontWeight: 'bold',
-    letterSpacing: -hp(0.5),
   },
 
   boldText16: {
@@ -42,7 +37,6 @@ export const fonts = {
     lineHeight: hp(24),
     color: colors.dark,
     fontWeight: 'bold',
-    letterSpacing: -hp(0.5),
   },
 
   boldText14: {
@@ -50,6 +44,5 @@ export const fonts = {
     lineHeight: hp(21),
     color: colors.dark,
     fontWeight: 'bold',
-    letterSpacing: -hp(0.5),
   },
 };

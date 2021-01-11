@@ -26,7 +26,7 @@ export class Users extends Component {
           data: res,
           loading: false,
         });
-        console.log('NEW RESPOND', res);
+        // console.log('NEW RESPOND', res);
       })
       .catch((error) => {
         this.setState({error, loading: false});
@@ -34,7 +34,13 @@ export class Users extends Component {
   };
 
   renderItem = ({item}) => (
-    <TouchableOpacity style={styles.list}>
+    <TouchableOpacity
+      style={styles.list}
+      onPress={() => {
+        this.props.navigation.navigate('UserInfo', {
+          details: item,
+        });
+      }}>
       <View style={styles.avatarContainer}>
         <Image source={{uri: item.avatar}} style={styles.avatar} />
         <View

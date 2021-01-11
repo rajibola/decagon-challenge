@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
     marginVertical: hp(5),
     backgroundColor: colors.white,
     paddingHorizontal: wp(10),
+    marginHorizontal: wp(5),
 
     shadowColor: '#000',
     shadowOffset: {
@@ -48,6 +49,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 1.41,
 
     elevation: 2,
+    borderRadius: wp(5),
   },
   avatarContainer: {
     borderWidth: 0.5,
@@ -57,6 +59,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: wp(15),
+    borderColor: colors.gray,
   },
   avatar: {
     width: wp(50),

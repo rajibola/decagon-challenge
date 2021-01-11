@@ -10,6 +10,8 @@ target 'ridwanAjibola' do
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'ridwanAjibolaTests' do
     inherit! :complete
     # Pods for testing

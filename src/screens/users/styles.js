@@ -66,26 +66,7 @@ export const styles = StyleSheet.create({
     height: wp(50),
     borderRadius: wp(25),
   },
-  headerText: {
-    ...fonts.boldText18,
-    // textTransform: 'uppercase',
-  },
-  header: {
-    height: hp(55),
-    backgroundColor: colors.white,
-    justifyContent: 'center',
-    alignItems: 'center',
 
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-  },
   container: {
     flex: 1,
     backgroundColor: colors.white,

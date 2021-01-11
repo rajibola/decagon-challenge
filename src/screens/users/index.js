@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../../colors';
+import HeaderBar from '../../shared/header-bar';
 import {handleDate} from '../../utils/helpers';
 import {styles} from './styles';
 
@@ -26,7 +27,6 @@ export class Users extends Component {
           data: res,
           loading: false,
         });
-        // console.log('NEW RESPOND', res);
       })
       .catch((error) => {
         this.setState({error, loading: false});
@@ -62,11 +62,12 @@ export class Users extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Contacts</Text>
-        </View>
-
-        <FlatList data={this.state.data} renderItem={this.renderItem} />
+        <HeaderBar title="Contacts" leftIcon />
+        <FlatList
+          data={this.state.data}
+          renderItem={this.renderItem}
+          keyExtractor={(item) => item.id}
+        />
       </View>
     );
   }

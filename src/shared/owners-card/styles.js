@@ -4,6 +4,9 @@ import {fonts} from '../../fonts';
 import {hp, wp} from '../resposive-dimension';
 
 export const styles = StyleSheet.create({
+  icon: {
+    width: wp(20),
+  },
   bioDetail: {
     ...fonts.regularText14,
   },

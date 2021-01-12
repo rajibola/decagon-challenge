@@ -2,6 +2,9 @@
   package="com.ridwanajibola">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
       android:name=".MainApplication"
@@ -9,7 +12,9 @@
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      android:largeHeap="true"
+      android:hardwareAccelerated="false">
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

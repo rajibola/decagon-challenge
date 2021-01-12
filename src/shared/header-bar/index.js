@@ -4,10 +4,10 @@ import {styles} from './styles';
 import Icon from 'react-native-vector-icons/Entypo';
 import {hp} from '../resposive-dimension';
 
-const HeaderBar = ({title, leftIcon, rightIcon, onRightPress, onLeftPress}) => {
+const HeaderBar = ({title, onRightPress, onLeftPress}) => {
   return (
     <View style={styles.container}>
-      {leftIcon && (
+      {onLeftPress && (
         <TouchableOpacity style={styles.sideIcon} onPress={onLeftPress}>
           <Icon name="chevron-thin-left" size={hp(16)} />
           <Text style={styles.backText}>Back</Text>
@@ -15,7 +15,7 @@ const HeaderBar = ({title, leftIcon, rightIcon, onRightPress, onLeftPress}) => {
       )}
       <Text style={styles.title}>{title}</Text>
       <TouchableOpacity style={styles.sideIcon} onPress={onRightPress}>
-        {rightIcon && <Text style={styles.backText}>Home</Text>}
+        {onRightPress && <Text style={styles.backText}>Home</Text>}
       </TouchableOpacity>
     </View>
   );

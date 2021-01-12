@@ -20,7 +20,13 @@ export class UserInfo extends Component {
     console.log(createdAt);
     return (
       <View style={styles.container}>
-        <HeaderBar title={fullName} leftIcon rightIcon />
+        <HeaderBar
+          title={fullName}
+          leftIcon
+          rightIcon
+          onLeftPress={() => this.props.navigation.goBack()}
+          onRightPress={() => this.props.navigation.navigate('Home')}
+        />
 
         <Image source={{uri: avatar}} style={styles.avatar} />
         <Text style={styles.name}>{fullName}</Text>

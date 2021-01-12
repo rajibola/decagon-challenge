@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {styles} from './styles';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {wp} from '../resposive-dimension';
 
 export const OwnersCard = ({data}) => {
   const {
@@ -24,22 +26,30 @@ export const OwnersCard = ({data}) => {
         <View>
           <View style={styles.row}>
             <View style={styles.row}>
-              <Text style={styles.listTitle}></Text>
+              <MaterialIcons name="work" size={wp(15)} style={styles.icon} />
               <Text style={styles.detail}>{job_title}</Text>
             </View>
 
-            <Text style={styles.listTitle}></Text>
+            <MaterialIcons name="email" size={wp(15)} style={styles.icon} />
             <Text style={styles.detail}>{email}</Text>
           </View>
 
           <View style={styles.row}>
             <View style={styles.row}>
-              <Text style={styles.listTitle}></Text>
+              <MaterialIcons
+                name="directions-car"
+                size={wp(15)}
+                style={styles.icon}
+              />
               <Text style={styles.detail}>
                 {car_model} {car_model_year}
               </Text>
             </View>
-            <Text style={styles.listTitle}></Text>
+            <MaterialIcons
+              name="color-lens"
+              size={wp(15)}
+              style={styles.icon}
+            />
             <Text style={styles.detail}>{car_color}</Text>
           </View>
         </View>

@@ -62,7 +62,10 @@ export class Users extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderBar title="Contacts" leftIcon />
+        <HeaderBar
+          title="Contacts"
+          onLeftPress={() => this.props.navigation.goBack()}
+        />
         <FlatList
           data={this.state.data}
           renderItem={this.renderItem}

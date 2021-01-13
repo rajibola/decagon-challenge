@@ -1,13 +1,18 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../colors';
 import {fonts} from '../../fonts';
+import {wp} from '../resposive-dimension';
 
 export const styles = StyleSheet.create({
   text: {
     ...fonts.boldText18,
+    color: colors.dark,
     textAlign: 'center',
+    width: wp(230),
+    alignSelf: 'center',
   },
-  loader: {
-    backgroundColor: 'rgba(255,255,255,0.7)',
+  container: {
+    backgroundColor: 'rgba(255,255,255,0.9)',
     position: 'absolute',
     flex: 1,
     top: 0,

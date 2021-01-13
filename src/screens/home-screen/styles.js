@@ -7,16 +7,14 @@ export const styles = StyleSheet.create({
   modalText: {
     ...fonts.regularText18,
     width: '100%',
-    // backgroundColor: 'red',
     borderBottomWidth: 0.5,
     borderBottomColor: colors.darkGray,
     lineHeight: hp(60),
     paddingHorizontal: wp(10),
   },
   modal: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: 'white',
+    borderRadius: wp(8),
     width: wp(300),
     alignSelf: 'center',
     height: hp(400),
@@ -29,6 +27,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
 
     elevation: 3,
+    overflow: 'hidden',
   },
   modalContainer: {
     flex: 1,
@@ -46,7 +45,6 @@ export const styles = StyleSheet.create({
     ...fonts.boldText16,
   },
   filterText: {
-    // width: wp(100),
     textAlign: 'center',
     paddingVertical: hp(5),
     paddingHorizontal: wp(20),
@@ -76,6 +74,6 @@ export const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
 });

@@ -1,16 +1,26 @@
 import Papa from 'papaparse';
-import React, {Component} from 'react';
-import {FlatList, Text, View, PermissionsAndroid} from 'react-native';
+import React, {PureComponent} from 'react';
+import {FlatList, Text, View, PermissionsAndroid, Modal} from 'react-native';
 import {styles} from './styles';
 import RNFS from 'react-native-fs';
 import {OwnersCard} from '../../shared/owners-card';
 import RNFetchBlob from 'react-native-fetch-blob';
+import {Loader} from '../../shared/loader';
+import {hp, wp} from '../../shared/resposive-dimension';
 
-export class HomeScreen extends Component {
+export class HomeScreen extends PureComponent {
   constructor() {
     super();
     this.state = {
       whole_data: null,
+      page: 0,
+      posts: [],
+
+      car_types: [],
+      all_colors: [],
+
+      modal_data: [],
+      modal_visibility: false,
     };
   }
   componentDidMount() {
@@ -29,91 +39,52 @@ export class HomeScreen extends Component {
 
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         console.log('You can use read from the storage');
-        var path =
-          RNFS.ExternalStorageDirectoryPath + '/owners/snakes_count_1000.csv';
-        // console.log('PATH', path);
+        var path = RNFS.ExternalStorageDirectoryPath + '/owners/small.csv';
 
         let data = [];
+        var update;
         let count = 0;
+        let carTypes = new Set();
+        let carColors = new Set();
 
-        RNFetchBlob.fs
-          .readStream(
-            // file path
-            path,
-            'utf8',
-            4095,
-            200,
-          )
-          .then((ifstream) => {
-            ifstream.open();
-            ifstream.onData((chunk) => {
-              // when encoding is `ascii`, chunk will be an array contains numbers
-              // otherwise it will be a string
-              // console.log('CHUNK', RNFetchBlob.base64.decode(chunk));
-              // if (count % 500 === 0) {
-              //   this.setState({whole_data: data});
-              // }
-              data += chunk;
-              // data.concat(...chunk);
-              count++;
-              // console.log(count);
-              this.setState({
-                whole_data: Papa.parse(data, {
-                  header: true,
-                  complete: function (results) {
-                    console.log('Finished:', results.data);
-                  },
-                }),
-              });
+        RNFetchBlob.fs.readStream(path, 'utf8', 4095, 200).then((ifstream) => {
+          ifstream.open();
+          ifstream.onData(async (chunk) => {
+            data += chunk;
+            count++;
+
+            await this.setState({
+              whole_data: update.data,
             });
-            ifstream.onError((err) => {
-              console.log('oops', err);
+
+            if (count === 1) {
+              this.runOnce();
+            }
+          });
+          ifstream.onError((err) => {
+            console.log('oops', err);
+          });
+          ifstream.onEnd(async () => {
+            update = await Papa.parse(data, {
+              header: true,
+              worker: true,
+              complete: function (results) {
+                results.data.forEach((item) => {
+                  carTypes.add(item.car_model), carColors.add(item.car_color);
+                });
+                console.log('RESULT', carColors);
+              },
             });
-            ifstream.onEnd(async () => {
-              await this.setState({
-                whole_data: Papa.parse(data, {
-                  header: true,
-                  complete: function (results) {
-                    console.log('Finished:');
-                  },
-                }),
-              });
-              await console.log('WHOLE_DATA ', this.state.whole_data.data);
-              // console.log('THE END', data);
 
-              // Papa.parse(data, {
-              //   // download: true,
-
-              //   // worker: true,
-              //   // comments: '',
-              //   header: true,
-              //   // dynamicTyping: true,
-              //   // step: function (results) {
-              //   //   console.log('Row:', results.data);
-              //   // },
-              //   complete: function (results) {
-              //     console.log('WHOLE DATA', this.state.whole_data);
-              //   },
-              // });
+            const modelsArray = await Array.from(carTypes);
+            const colorsArray = await Array.from(carColors);
+            await this.setState({
+              whole_data: update.data,
+              car_types: modelsArray,
+              all_colors: colorsArray,
             });
           });
-
-        // RNFS.readFile(path)
-        //   .then((res) => {
-        //     console.log('RESPONSE', res);
-        //   })
-
-        //   .catch((err) => {
-        //     console.log(err.message, err.code);
-        //   });
-
-        // Papa.parse(path, {
-        //   // download: true,
-        //   worker: true,
-        //   step: function (results) {
-        //     console.log('Row:', results.data);
-        //   },
-        // });
+        });
       } else {
         console.log('Storage permission denied');
       }
@@ -122,233 +93,128 @@ export class HomeScreen extends Component {
     }
   };
 
+  filterByColor = (color) => {
+    const colorData = this.state.whole_data.filter(
+      (item) => item.car_color === color,
+    );
+    this.setState({car_color_data: colorData});
+  };
+
+  filterByModel = (model) => {
+    const modelData = this.state.whole_data.filter(
+      (item) => (item.car_model = model),
+    );
+    this.setState({car_model_data: modelData});
+    console.log(modelData);
+  };
+
+  runOnce() {
+    this.addRecords(0);
+  }
+
   getFile = async () => {
     if (await this.requestExternalStoreageRead()) {
-      var path =
-        RNFS.ExternalStorageDirectoryPath + '/owners/car_ownsers_data.csv';
-      console.log('PATH', path);
-
-      // Papa.parse(path, {
-      //   worker: true,
-      //   step: function (results) {
-      //     console.log('Row:', results.data);
-      //   },
-      // });
     }
   };
+
+  addRecords = (page) => {
+    const newRecords = [];
+    for (
+      var i = page * 12, il = i + 12;
+      i < il && i < this.state.whole_data.length;
+      i++
+    ) {
+      newRecords.push(this.state.whole_data[i]);
+    }
+    this.setState({
+      posts: [...this.state.posts, ...newRecords],
+    });
+  };
+
+  onScrollHandler = () => {
+    this.setState(
+      {
+        page: this.state.page + 1,
+      },
+      () => {
+        this.addRecords(this.state.page);
+      },
+    );
+  };
+
+  _renderItem = ({item}) => <OwnersCard data={item} />;
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}> Car{'\n'} Owners </Text>
+        <View>
+          <View style={styles.header}>
+            <Text style={styles.title}> Car{'\n'} Owners </Text>
+            <Text
+              style={styles.usersButton}
+              onPress={() => this.props.navigation.navigate('Users')}>
+              Users
+            </Text>
+          </View>
+          <View>
+            <View style={styles.filterContainer}>
+              <Text style={styles.filter}>Filter Car</Text>
+              <Text
+                style={styles.filterText}
+                onPress={() =>
+                  this.setState({
+                    modal_visibility: true,
+                    modal_data: this.state.car_types,
+                  })
+                }>
+                Type
+              </Text>
+              <Text
+                style={styles.filterText}
+                onPress={() =>
+                  this.setState({
+                    modal_visibility: true,
+                    modal_data: this.state.all_colors,
+                  })
+                }>
+                color
+              </Text>
+              <Text style={styles.filterText}>Type</Text>
+            </View>
+          </View>
+        </View>
 
-        <FlatList
-          data={Data}
-          renderItem={({item}) => <OwnersCard data={item} />}
-          keyExtractor={(_, i) => i.toString()}
-        />
+        {this.state.posts && (
+          <FlatList
+            ref={(ref) => {
+              this.flatListRef = ref;
+            }}
+            data={this.state.posts}
+            renderItem={this._renderItem}
+            keyExtractor={(_, i) => i.toString()}
+            onEndReached={this.onScrollHandler}
+            onEndThreshold={0}
+          />
+        )}
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.modal_visibility}>
+          <View style={styles.modalContainer}>
+            <View style={styles.modal}>
+              <FlatList
+                data={this.state.modal_data}
+                renderItem={({item}) => {
+                  return <Text style={styles.modalText}>{item}</Text>;
+                }}
+              />
+            </View>
+          </View>
+        </Modal>
       </View>
     );
   }
 }
 
 export default HomeScreen;
-
-const Data = [
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-  {
-    bio:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
-    car_color: 'Maroon',
-    car_model: 'Lincoln',
-    car_model_year: '1996',
-    country: 'Thailand',
-    email: 'shainning0@so-net.ne.jp',
-    first_name: 'Scot',
-    gender: 'Male',
-    id: '1',
-    job_title: 'Staff Accountant III',
-    last_name: 'Hainning',
-  },
-];

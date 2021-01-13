@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../../colors';
 import HeaderBar from '../../shared/header-bar';
+import {Loader} from '../../shared/loader';
 import {handleDate} from '../../utils/helpers';
 import {styles} from './styles';
 
@@ -10,7 +11,7 @@ export class Users extends Component {
     super(props);
 
     this.state = {
-      loading: false,
+      loading: true,
       data: [],
     };
   }
@@ -71,6 +72,7 @@ export class Users extends Component {
           renderItem={this.renderItem}
           keyExtractor={(item) => item.id}
         />
+        {this.state.loading && <Loader />}
       </View>
     );
   }

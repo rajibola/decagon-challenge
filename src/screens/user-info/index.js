@@ -16,7 +16,7 @@ export class UserInfo extends Component {
       gender,
       avatar,
       createdAt,
-    } = this.props.route.params.details;
+    } = this.props?.route?.params?.details;
     console.log(createdAt);
     return (
       <View style={styles.container}>

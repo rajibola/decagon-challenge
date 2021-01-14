@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders app 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#d8d8e8",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#d8d8e8",
+        "elevation": 5,
+        "flexDirection": "row",
+        "height": 90.5,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 30,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.25,
+        "shadowRadius": 3.84,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 50,
+          "opacity": 1,
+          "width": 110,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 26.5,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Entypo",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 29.5,
+            "lineHeight": 44.5,
+            "marginLeft": 10,
+          }
+        }
+      >
+        Back
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#2f3138",
+          "fontSize": 29.5,
+          "fontWeight": "bold",
+          "lineHeight": 44.5,
+        }
+      }
+    >
+      
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 50,
+          "opacity": 1,
+          "width": 110,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 29.5,
+            "lineHeight": 44.5,
+            "marginLeft": 10,
+          }
+        }
+      >
+        Home
+      </Text>
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 140,
+        "height": 140,
+        "marginBottom": 41,
+        "marginHorizontal": 80,
+        "marginTop": 57.5,
+        "resizeMode": "contain",
+        "width": 140,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#2f3138",
+        "fontSize": 52.5,
+        "fontWeight": "bold",
+        "lineHeight": 49.5,
+        "marginLeft": 80,
+      }
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#2f3138",
+        "fontSize": 26.5,
+        "lineHeight": 39.5,
+        "marginLeft": 80,
+      }
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#2f3138",
+        "fontSize": 26.5,
+        "lineHeight": 39.5,
+        "marginLeft": 80,
+        "opacity": 0.7,
+        "paddingRight": 80,
+        "paddingTop": 16.5,
+      }
+    }
+  >
+    orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat a nibh id convallis. Aliquam condimentum in ante nec sagittis. Suspendisse a felis ornare, pellentesque purus a, auctor orci. Mauris in congue ante. Integer aliquet imperdiet tortor a tristique. Quisque.
+  </Text>
+  <Text
+    style={
+      Object {
+        "borderBottomColor": "rgba(0,0,0,0.2)",
+        "borderBottomWidth": 2,
+        "color": "#2f3138",
+        "fontSize": 23,
+        "fontWeight": "bold",
+        "letterSpacing": 1,
+        "lineHeight": 34.5,
+        "marginLeft": 80,
+        "marginTop": 49.5,
+        "opacity": 0.7,
+        "textTransform": "uppercase",
+      }
+    }
+  >
+    time
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginLeft": 80,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#2f3138",
+          "fontSize": 52.5,
+          "fontWeight": "bold",
+          "lineHeight": 49.5,
+          "marginVertical": 16.5,
+        }
+      }
+    >
+      NaN : NaN
+    </Text>
+    <Text
+      style={
+        Object {
+          "backgroundColor": "#2f3138",
+          "borderBottomLeftRadius": 60,
+          "borderTopLeftRadius": 60,
+          "color": "#fff",
+          "elevation": 3,
+          "fontSize": 23,
+          "lineHeight": 29.5,
+          "paddingLeft": 24,
+          "paddingRight": 20,
+          "paddingVertical": 16,
+          "position": "absolute",
+          "right": 0,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.22,
+          "shadowRadius": 2.22,
+          "textTransform": "uppercase",
+          "top": 16.5,
+        }
+      }
+    >
+      current
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "borderBottomColor": "rgba(0,0,0,0.2)",
+        "borderBottomWidth": 2,
+        "color": "#2f3138",
+        "fontSize": 23,
+        "fontWeight": "bold",
+        "letterSpacing": 1,
+        "lineHeight": 34.5,
+        "marginLeft": 80,
+        "marginTop": 49.5,
+        "opacity": 0.7,
+        "textTransform": "uppercase",
+      }
+    }
+  >
+    Countries
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginLeft": 80,
+      }
+    }
+  >
+    <View>
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#2f3138",
+              "fontSize": 50,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 26.5,
+            "lineHeight": 39.5,
+            "opacity": 0.5,
+          }
+        }
+      >
+        No 
+        Countries
+      </Text>
+    </View>
+  </View>
+  <Text
+    style={
+      Object {
+        "borderBottomColor": "rgba(0,0,0,0.2)",
+        "borderBottomWidth": 2,
+        "color": "#2f3138",
+        "fontSize": 23,
+        "fontWeight": "bold",
+        "letterSpacing": 1,
+        "lineHeight": 34.5,
+        "marginLeft": 80,
+        "marginTop": 49.5,
+        "opacity": 0.7,
+        "textTransform": "uppercase",
+      }
+    }
+  >
+    colors
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginLeft": 80,
+      }
+    }
+  >
+    <View>
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#2f3138",
+              "fontSize": 50,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 26.5,
+            "lineHeight": 39.5,
+            "opacity": 0.5,
+          }
+        }
+      >
+        No 
+        colors
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -7,7 +7,11 @@ jest.mock('react-native-fetch-blob', () => {
     ios: () => {},
     config: () => {},
     session: () => {},
-    fs: () => {},
+    fs: () => {
+      return {
+        onError: () => {},
+      };
+    },
     wrap: () => {},
     polyfill: () => {},
     JSONStream: () => {},

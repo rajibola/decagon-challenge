@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {colors} from '../../colors';
 import {fonts} from '../../fonts';
 import {wp, hp, getStatusBarHeight} from '../../shared/resposive-dimension';
@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    zIndex: 10,
+    zIndex: 1000,
   },
   title: {
     ...fonts.boldText32,
@@ -76,6 +76,6 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    marginTop: getStatusBarHeight(),
+    marginTop: Platform.OS === 'ios' ? getStatusBarHeight() : 0,
   },
 });

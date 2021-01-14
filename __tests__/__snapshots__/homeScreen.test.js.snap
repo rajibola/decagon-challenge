@@ -17,7 +17,7 @@ exports[`<HomeScreen /> renders correctly 1`] = `
           "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "space-between",
-          "zIndex": 10,
+          "zIndex": 1000,
         }
       }
     >

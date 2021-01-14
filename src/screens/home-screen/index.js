@@ -1,13 +1,10 @@
-import Papa from 'papaparse';
 import React, {PureComponent} from 'react';
-import {FlatList, Text, View, PermissionsAndroid, Modal} from 'react-native';
+import {FlatList, Text, View, Modal} from 'react-native';
 import {styles} from './styles';
-import RNFS from 'react-native-fs';
 import {OwnersCard} from '../../shared/owners-card';
-import RNFetchBlob from 'react-native-fetch-blob';
 import {Loader} from '../../shared/loader';
-import {hp, wp} from '../../shared/resposive-dimension';
 import {AlertComponent} from '../../shared/alert-component';
+import {requestExternalStoreageRead} from '../../utils/helpers';
 
 export class HomeScreen extends PureComponent {
   constructor() {
@@ -17,120 +14,64 @@ export class HomeScreen extends PureComponent {
       whole_data: [],
       page: 0,
       posts: [],
-
       car_types: [],
       all_colors: [],
-
       modal_data: [],
       modal_visibility: false,
-
       read_data: [],
       filter_text: '',
       count: 0,
+      alert: false,
     };
   }
   componentDidMount() {
     this.getFile();
   }
 
-  requestExternalStoreageRead = async () => {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-        {
-          title: 'Cool App ...',
-          message: 'App needs access to external storage',
-        },
-      );
-
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        console.log('You can use read from the storage');
-        var path = RNFS.ExternalStorageDirectoryPath + '/owners/smal.csv';
-
-        let data = [];
-        var update;
-        let carTypes = new Set();
-        let carColors = new Set();
-
-        RNFetchBlob.fs.readStream(path, 'utf8', 4095, 200).then((ifstream) => {
-          this.setState({isLoading: true});
-          ifstream.open();
-          ifstream.onData(async (chunk) => {
-            data += chunk;
-            this.setState({count: this.state.count + 1});
-          });
-          ifstream.onError((err) => {
-            this.setState({isLoading: false});
-            console.log('oops', err);
-          });
-          ifstream.onEnd(() => {
-            update = Papa.parse(data, {
-              header: true,
-              worker: true,
-              complete: function (results) {
-                results.data.forEach((item) => {
-                  carTypes.add(item.car_model), carColors.add(item.car_color);
-                });
-              },
-            });
-
-            const modelsArray = Array.from(carTypes);
-            const colorsArray = Array.from(carColors);
-            this.setState({
-              whole_data: update.data,
-              car_types: modelsArray,
-              all_colors: colorsArray,
-              isLoading: false,
-            });
-            console.log(this.state.whole_data);
-          });
-        });
-      } else {
-        console.log('Storage permission denied');
-      }
-    } catch (err) {
-      console.warn(err);
-    }
+  onDataCompleted = async (values) => {
+    await this.setState(values);
+    await this.setState({read_data: [...this.state.whole_data]});
+    this.addRecords(0);
   };
-
-  async filter(data) {
-    if (this.state.filter_text === 'color') {
-      return this.filterByColor(data);
-    } else {
-      return this.filterByModel(data);
-    }
+  filter(data) {
+    this.state.filter_text === 'color'
+      ? this.filterByColor(data)
+      : this.filterByModel(data);
   }
 
   async filterByColor(color) {
     await this.setState({posts: []});
-
     const colorData = await this.state.whole_data.filter(
       (item) => item.car_color === color,
     );
     await this.setState({read_data: colorData});
-    await this.runOnce();
-
-    console.log(color);
+    await this.addRecords(0);
   }
 
   async filterByModel(model) {
     await this.setState({posts: []});
-
     const modelData = await this.state.whole_data.filter(
       (item) => item.car_model === model,
     );
     await this.setState({read_data: modelData});
-
-    await this.runOnce();
-  }
-
-  runOnce() {
     this.addRecords(0);
   }
 
-  getFile = async () => {
-    if (await this.requestExternalStoreageRead()) {
-    }
+  getFile = () => {
+    requestExternalStoreageRead(
+      this.onDataCompleted,
+      this.updateChunkCount,
+      this.toggleLoader,
+    );
+  };
+
+  updateChunkCount = () => {
+    this.setState({count: this.state.count + 1});
+  };
+
+  toggleLoader = (isError: boolean) => {
+    this.setState({isLoading: !this.state.isLoading});
+    isError && this.setState({alert: true});
   };
 
   addRecords = (page) => {
@@ -173,6 +114,16 @@ export class HomeScreen extends PureComponent {
   };
 
   render() {
+    const {
+      posts,
+      modal_visibility,
+      modal_data,
+      isLoading,
+      alert,
+      count,
+      car_types,
+      all_colors,
+    } = this.state;
     return (
       <View style={styles.container}>
         <View>
@@ -192,7 +143,7 @@ export class HomeScreen extends PureComponent {
                 onPress={() =>
                   this.setState({
                     modal_visibility: true,
-                    modal_data: this.state.car_types,
+                    modal_data: car_types,
                     filter_text: 'type',
                   })
                 }>
@@ -203,7 +154,7 @@ export class HomeScreen extends PureComponent {
                 onPress={() =>
                   this.setState({
                     modal_visibility: true,
-                    modal_data: this.state.all_colors,
+                    modal_data: all_colors,
                     filter_text: 'color',
                   })
                 }>
@@ -213,12 +164,12 @@ export class HomeScreen extends PureComponent {
           </View>
         </View>
 
-        {this.state.posts && (
+        {posts && (
           <FlatList
             ref={(ref) => {
               this.flatListRef = ref;
             }}
-            data={this.state.posts}
+            data={posts}
             renderItem={this._renderItem}
             keyExtractor={(_, i) => _.email}
             onEndReached={this.onScrollHandler}
@@ -229,12 +180,12 @@ export class HomeScreen extends PureComponent {
         <Modal
           animationType="slide"
           transparent={true}
-          visible={this.state.modal_visibility}>
+          visible={modal_visibility}>
           <View style={styles.modalContainer}>
             <View style={styles.modal}>
               <FlatList
                 showsVerticalScrollIndicator={false}
-                data={this.state.modal_data}
+                data={modal_data}
                 renderItem={this._renderModalItems}
                 keyExtractor={(_, i) => i.toString()}
               />
@@ -242,13 +193,13 @@ export class HomeScreen extends PureComponent {
           </View>
         </Modal>
 
-        {this.state.isLoading && (
-          <Loader text={`Loading... \n ${this.state.count} chunk(s) of data`} />
+        {isLoading && (
+          <Loader text={`Loading... \n ${count} chunk(s) of data`} />
         )}
 
-        {!this.state.isLoading && !this.state.whole_data.length ? (
-          <AlertComponent text="Check the file path" />
-        ) : null}
+        {alert && (
+          <AlertComponent text={`File Missing\n Please check the file path`} />
+        )}
       </View>
     );
   }

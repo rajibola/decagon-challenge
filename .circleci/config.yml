@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: rm -f package-lock.json && npm install
+            - run: npm install
             - run: npm ci
             - run: npx jest --ci
 

@@ -6,6 +6,7 @@ exports[`<HomeScreen /> renders correctly 1`] = `
     Object {
       "backgroundColor": "#fff",
       "flex": 1,
+      "marginTop": 20,
     }
   }
 >

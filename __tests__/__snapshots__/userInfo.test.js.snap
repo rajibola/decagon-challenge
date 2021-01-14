@@ -6,6 +6,7 @@ exports[`App renders app 1`] = `
     Object {
       "backgroundColor": "#d8d8e8",
       "flex": 1,
+      "marginTop": 20,
     }
   }
 >

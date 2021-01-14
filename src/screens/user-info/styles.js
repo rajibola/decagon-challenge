@@ -1,7 +1,12 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../colors';
 import {fonts} from '../../fonts';
-import {deviceWidth, hp, wp} from '../../shared/resposive-dimension';
+import {
+  deviceWidth,
+  getStatusBarHeight,
+  hp,
+  wp,
+} from '../../shared/resposive-dimension';
 
 export const styles = StyleSheet.create({
   timeLabel: {
@@ -95,5 +100,6 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.darkGray,
+    marginTop: getStatusBarHeight(),
   },
 });

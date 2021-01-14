@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../colors';
 import {fonts} from '../../fonts';
-import {hp, wp} from '../../shared/resposive-dimension';
+import {getStatusBarHeight, hp, wp} from '../../shared/resposive-dimension';
 
 export const styles = StyleSheet.create({
   date: {
@@ -70,5 +70,6 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    marginTop: getStatusBarHeight(),
   },
 });

@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../colors';
 import {fonts} from '../../fonts';
-import {wp, hp} from '../../shared/resposive-dimension';
+import {wp, hp, getStatusBarHeight} from '../../shared/resposive-dimension';
 
 export const styles = StyleSheet.create({
   modalText: {
@@ -76,5 +76,6 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    marginTop: getStatusBarHeight(),
   },
 });

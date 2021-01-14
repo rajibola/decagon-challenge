@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderBar/> HeaderBar component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#d8d8e8",
+      "elevation": 5,
+      "flexDirection": "row",
+      "height": 90.5,
+      "justifyContent": "space-between",
+      "paddingHorizontal": 30,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#2f3138",
+        "fontSize": 29.5,
+        "fontWeight": "bold",
+        "lineHeight": 44.5,
+      }
+    }
+  >
+    Incorrect Path
+  </Text>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "opacity": 1,
+        "width": 110,
+      }
+    }
+  />
+</View>
+`;

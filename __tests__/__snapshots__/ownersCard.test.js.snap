@@ -1,0 +1,1017 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OwnersCard/> OwnersCard component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 10,
+      "elevation": 3,
+      "marginVertical": 8,
+      "overflow": "hidden",
+      "paddingBottom": 24.5,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+      "width": 700,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#f4f4f8",
+        "color": "#2f3138",
+        "fontSize": 29.5,
+        "fontWeight": "bold",
+        "lineHeight": 44.5,
+        "minHeight": 49.5,
+        "paddingLeft": 16.5,
+      }
+    }
+  >
+    ridwan
+     
+    ajibola
+     (
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Senior Developer
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          rajibola1997@gmail.com
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Toyota
+             
+            2008
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          red
+        </Text>
+      </View>
+    </View>
+    <View>
+      <Text
+        style={Object {}}
+      >
+        Bio:
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 23,
+            "lineHeight": 29.5,
+          }
+        }
+      >
+        lorem ipsum ndhd fdjdjjd d dsssns
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<OwnersCard/> OwnersCard component renders correctly 2`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 10,
+      "elevation": 3,
+      "marginVertical": 8,
+      "overflow": "hidden",
+      "paddingBottom": 24.5,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+      "width": 700,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#f4f4f8",
+        "color": "#2f3138",
+        "fontSize": 29.5,
+        "fontWeight": "bold",
+        "lineHeight": 44.5,
+        "minHeight": 49.5,
+        "paddingLeft": 16.5,
+      }
+    }
+  >
+    john
+     
+    doe
+     (
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Junior Developer
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          rajibola1997@gmail.com
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Mazda
+             
+            2004
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          blue
+        </Text>
+      </View>
+    </View>
+    <View>
+      <Text
+        style={Object {}}
+      >
+        Bio:
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 23,
+            "lineHeight": 29.5,
+          }
+        }
+      >
+        lorem ipsum ndhd fdjdjjd d dsssns
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<OwnersCard/> OwnersCard component renders correctly 3`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 10,
+      "elevation": 3,
+      "marginVertical": 8,
+      "overflow": "hidden",
+      "paddingBottom": 24.5,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+      "width": 700,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#f4f4f8",
+        "color": "#2f3138",
+        "fontSize": 29.5,
+        "fontWeight": "bold",
+        "lineHeight": 44.5,
+        "minHeight": 49.5,
+        "paddingLeft": 16.5,
+      }
+    }
+  >
+    shishi
+     
+    ma
+     (
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            DevOp Developer
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          rajibola1997@gmail.com
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Toyota
+             
+            2008
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          green
+        </Text>
+      </View>
+    </View>
+    <View>
+      <Text
+        style={Object {}}
+      >
+        Bio:
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 23,
+            "lineHeight": 29.5,
+          }
+        }
+      >
+        lorem ipsum ndhd fdjdjjd d dsssns
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<OwnersCard/> OwnersCard component renders correctly 4`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 10,
+      "elevation": 3,
+      "marginVertical": 8,
+      "overflow": "hidden",
+      "paddingBottom": 24.5,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+      "width": 700,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#f4f4f8",
+        "color": "#2f3138",
+        "fontSize": 29.5,
+        "fontWeight": "bold",
+        "lineHeight": 44.5,
+        "minHeight": 49.5,
+        "paddingLeft": 16.5,
+      }
+    }
+  >
+    kaka
+     
+    demo
+     (
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            Senior Developer
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          rajibola1997@gmail.com
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#f4f4f8",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#f4f4f8",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 30,
+                },
+                Object {
+                  "width": 40,
+                },
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#2f3138",
+                "fontSize": 23,
+                "lineHeight": 29.5,
+                "width": 260,
+              }
+            }
+          >
+            BMW
+             
+            2008
+          </Text>
+        </View>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 30,
+              },
+              Object {
+                "width": 40,
+              },
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 23,
+              "lineHeight": 29.5,
+              "width": 260,
+            }
+          }
+        >
+          brown
+        </Text>
+      </View>
+    </View>
+    <View>
+      <Text
+        style={Object {}}
+      >
+        Bio:
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 23,
+            "lineHeight": 29.5,
+          }
+        }
+      >
+        lorem ipsum ndhd lured d disius
+      </Text>
+    </View>
+  </View>
+</View>
+`;

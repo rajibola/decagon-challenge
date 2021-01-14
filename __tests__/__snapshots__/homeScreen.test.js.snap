@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeScreen /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "zIndex": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#2f3138",
+            "fontSize": 52.5,
+            "fontWeight": "bold",
+            "lineHeight": 49.5,
+            "paddingHorizontal": 20,
+            "paddingVertical": 24.5,
+          }
+        }
+      >
+         Car
+        
+
+         Owners 
+      </Text>
+      <Text
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2f3138",
+            "borderRadius": 6,
+            "color": "#fff",
+            "fontSize": 29.5,
+            "lineHeight": 44.5,
+            "marginRight": 40,
+            "paddingHorizontal": 20,
+            "paddingVertical": 11.5,
+            "textTransform": "uppercase",
+          }
+        }
+      >
+        Users
+      </Text>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginHorizontal": 40,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#2f3138",
+              "fontSize": 26.5,
+              "fontWeight": "bold",
+              "lineHeight": 39.5,
+              "textAlign": "center",
+            }
+          }
+        >
+          Filter Car
+        </Text>
+        <Text
+          onPress={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f4f4f8",
+              "color": "#2f3138",
+              "fontSize": 26.5,
+              "lineHeight": 39.5,
+              "paddingHorizontal": 40,
+              "paddingVertical": 8,
+              "textAlign": "center",
+            }
+          }
+        >
+          By Type
+        </Text>
+        <Text
+          onPress={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f4f4f8",
+              "color": "#2f3138",
+              "fontSize": 26.5,
+              "lineHeight": 39.5,
+              "paddingHorizontal": 40,
+              "paddingVertical": 8,
+              "textAlign": "center",
+            }
+          }
+        >
+          By Color
+        </Text>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={2}
+    onEndThreshold={0}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View />
+  </RCTScrollView>
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(225,225,225,0.8)",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "white",
+            "borderRadius": 16,
+            "elevation": 3,
+            "height": 657,
+            "overflow": "hidden",
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 3.84,
+            "width": 600,
+          }
+        }
+      >
+        <RCTScrollView
+          data={Array []}
+          disableVirtualization={false}
+          getItem={[Function]}
+          getItemCount={[Function]}
+          horizontal={false}
+          initialNumToRender={10}
+          keyExtractor={[Function]}
+          maxToRenderPerBatch={10}
+          onContentSizeChange={[Function]}
+          onEndReachedThreshold={2}
+          onLayout={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          showsVerticalScrollIndicator={false}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <View />
+        </RCTScrollView>
+      </View>
+    </View>
+  </Modal>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "backgroundColor": "rgba(255,255,255,0.9)",
+        "bottom": 0,
+        "flex": 1,
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "color": "#2f3138",
+          "fontSize": 29.5,
+          "fontWeight": "bold",
+          "lineHeight": 44.5,
+          "textAlign": "center",
+          "width": 460,
+        }
+      }
+    >
+      Check the file path
+    </Text>
+  </View>
+</View>
+`;

@@ -246,9 +246,9 @@ export class HomeScreen extends PureComponent {
           <Loader text={`Loading... \n ${this.state.count} chunk(s) of data`} />
         )}
 
-        {!this.state.isLoading && this.state.whole_data && (
+        {!this.state.isLoading && !this.state.whole_data.length ? (
           <AlertComponent text="Check the file path" />
-        )}
+        ) : null}
       </View>
     );
   }

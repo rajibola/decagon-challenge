@@ -14,7 +14,6 @@ install:
 - nvm alias default $NODE_VERSION
 
 - npm install -g react-native-cli
-- npm install -g detox-cli
 - npm install -g yarn
 
 matrix:
@@ -31,5 +30,3 @@ matrix:
         - cd ios
         - pod install
         - cd ..
-        - detox build --configuration ios.sim.release
-        - detox test --configuration ios.sim.release --cleanup

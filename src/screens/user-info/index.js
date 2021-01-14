@@ -17,7 +17,7 @@ export class UserInfo extends Component {
       avatar,
       createdAt,
     } = this.props?.route?.params?.details;
-    console.log(createdAt);
+    // console.log(createdAt);
     return (
       <View style={styles.container}>
         <HeaderBar

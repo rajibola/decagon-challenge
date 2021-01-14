@@ -28,7 +28,7 @@ export const requestExternalStoreageRead = async (
     );
 
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      console.log('You can use read from the storage');
+      // console.log('You can use read from the storage');
       var path = RNFS.ExternalStorageDirectoryPath + '/owners/hw_200.csv';
 
       let data = [];
@@ -47,7 +47,7 @@ export const requestExternalStoreageRead = async (
           });
           ifstream.onError((err) => {
             toggleLoader(true);
-            console.log('oops', err);
+            // console.log('oops', err);
           });
           ifstream.onEnd(async () => {
             update = Papa.parse(data, {
@@ -71,9 +71,9 @@ export const requestExternalStoreageRead = async (
           });
         });
     } else {
-      console.log('Storage permission denied');
+      // console.log('Storage permission denied');
     }
   } catch (err) {
-    console.warn(err);
+    null;
   }
 };

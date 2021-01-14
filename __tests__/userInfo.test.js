@@ -1,7 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {Text} from 'react-native';
 import UserInfo from '../src/screens/user-info';
+
+jest.useFakeTimers();
 
 const createTestProps = (props: Object) => ({
   navigation: {

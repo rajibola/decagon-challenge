@@ -20,16 +20,21 @@ export class UserInfo extends Component {
     return (
       <View style={styles.container}>
         <HeaderBar
-          title={fullName}
+          title={fullName || 'Ridwan Ajibola'}
           leftIcon
           rightIcon
           onLeftPress={() => this.props.navigation.goBack()}
           onRightPress={() => this.props.navigation.navigate('Home')}
         />
 
-        <Image source={{uri: avatar}} style={styles.avatar} />
-        <Text style={styles.name}>{fullName}</Text>
-        <Text style={styles.gender}>{gender}</Text>
+        <Image
+          source={{
+            uri: avatar || 'https://randomuser.me/api/portraits/women/12.jpg',
+          }}
+          style={styles.avatar}
+        />
+        <Text style={styles.name}>{fullName || 'Ridwan Ajibola'}</Text>
+        <Text style={styles.gender}>{gender || 'Male'}</Text>
         <Text style={styles.about}>
           orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat
           a nibh id convallis. Aliquam condimentum in ante nec sagittis.
@@ -38,7 +43,9 @@ export class UserInfo extends Component {
         </Text>
 
         <Section title="time">
-          <Text style={styles.time}>{getTime(createdAt)}</Text>
+          <Text style={styles.time}>
+            {getTime(createdAt || 'Sat, 29 Feb 2020 09:34:31 GMT')}
+          </Text>
           <Text style={styles.timeLabel}>current</Text>
         </Section>
 

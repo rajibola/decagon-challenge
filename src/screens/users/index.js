@@ -38,7 +38,7 @@ export class Users extends Component {
     <TouchableOpacity
       style={styles.list}
       onPress={() => {
-        this.props.navigation.navigate('UserInfo', {
+        this?.props?.navigation?.navigate('UserInfo', {
           details: item,
         });
       }}>
@@ -54,8 +54,8 @@ export class Users extends Component {
         />
       </View>
       <View>
-        <Text style={styles.name}>{item.fullName}</Text>
-        <Text style={styles.date}>{handleDate(item.createdAt)}</Text>
+        <Text style={styles.name}>{item?.fullName}</Text>
+        <Text style={styles.date}>{handleDate(item?.createdAt)}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -65,17 +65,38 @@ export class Users extends Component {
       <View style={styles.container}>
         <HeaderBar
           title="Contacts"
-          onLeftPress={() => this.props.navigation.goBack()}
+          onLeftPress={() => this?.props?.navigation?.goBack()}
         />
         <FlatList
-          data={this.state.data}
-          renderItem={this.renderItem}
-          keyExtractor={(item) => item.id}
+          data={this.state?.data}
+          renderItem={this?.renderItem}
+          keyExtractor={(item) => item?.id}
         />
-        {this.state.loading && <Loader />}
+        {this.state?.loading && <Loader />}
       </View>
     );
   }
 }
 
 export default Users;
+
+Users.defaultProps = [
+  {
+    id: '5e5a3027d9d9e4a6369c835b',
+    avatar: 'https://randomuser.me/api/portraits/women/12.jpg',
+    fullName: 'Addie Sharon',
+    createdAt: 'Sat, 29 Feb 2020 09:34:31 GMT',
+    gender: 'male',
+    colors: [],
+    countries: [
+      'China',
+      'South Africa',
+      'france',
+      'Mexico',
+      'Japan',
+      'Estonia',
+      'Colombia',
+      'China',
+    ],
+  },
+];

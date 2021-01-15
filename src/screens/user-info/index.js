@@ -17,7 +17,6 @@ export class UserInfo extends Component {
       avatar,
       createdAt,
     } = this.props?.route?.params?.details;
-    // console.log(createdAt);
     return (
       <View style={styles.container}>
         <HeaderBar
@@ -44,7 +43,7 @@ export class UserInfo extends Component {
         </Section>
 
         <Section title="Countries">
-          {countries.map((country, i) => (
+          {countries?.map((country, i) => (
             <Text style={styles.country} key={i}>
               {country}
             </Text>
@@ -52,7 +51,7 @@ export class UserInfo extends Component {
         </Section>
 
         <Section title="colors">
-          {colors.map((color, i) => (
+          {colors?.map((color, i) => (
             <View
               style={[
                 styles.color,
@@ -72,7 +71,7 @@ const Section = ({title, children}) => {
     <>
       <Text style={styles.myColors}>{title}</Text>
       <View style={styles.childContainer}>
-        {children.length ? (
+        {children?.length ? (
           children
         ) : (
           <View>
@@ -90,3 +89,22 @@ const Section = ({title, children}) => {
 };
 
 export default UserInfo;
+
+UserInfo.defaultProps = {
+  id: '5e5a3027d9d9e4a6369c835b',
+  avatar: 'https://randomuser.me/api/portraits/women/12.jpg',
+  fullName: 'Addie Sharon',
+  createdAt: 'Sat, 29 Feb 2020 09:34:31 GMT',
+  gender: 'male',
+  colors: [],
+  countries: [
+    'China',
+    'South Africa',
+    'france',
+    'Mexico',
+    'Japan',
+    'Estonia',
+    'Colombia',
+    'China',
+  ],
+};

@@ -1,5 +1,15 @@
 # decagon-challenge [![rajibola](https://circleci.com/gh/rajibola/decagon-challenge.svg?style=svg&circle-token=d68ea90db9b067d231c2f6d7ee8dc6cadd9be1f6)](https://github.com/rajibola)
 
+
+## Preview
+
+<span>
+<img src="./doc/assets/car-owners.png" alt="car-owners"  width="270" />
+<img src="./doc/assets/users.png" alt="Users"  width="270" />
+ <span>
+ <img src="./doc/assets/user-details.png" alt="User Details"  width="270" />
+ <img src="./doc/assets/user-details2.png" alt="User Details2"  width="270" />
+
 ## Getting Started
 
 1. Fork or Clone the repo, then set it up:

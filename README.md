@@ -10,6 +10,10 @@
  <img src="./doc/assets/user-details.png" alt="User Details"  width="270" />
  <img src="./doc/assets/user-details2.png" alt="User Details2"  width="270" />
 
+### Follow this [link](https://drive.google.com/file/d/16CrNUh_ZPq3qh-9fPmt6Hbkd_cIyLYLl/view?usp=sharing) To preview the video demo of the app.
+
+<br />
+
 ## Getting Started
 
 1. Fork or Clone the repo, then set it up:

@@ -6,9 +6,12 @@
 <span>
 <img src="./doc/assets/car-owners.png" alt="car-owners"  width="270" />
 <img src="./doc/assets/users.png" alt="Users"  width="270" />
- <span>
+
  <img src="./doc/assets/user-details.png" alt="User Details"  width="270" />
  <img src="./doc/assets/user-details2.png" alt="User Details2"  width="270" />
+ <img src="./doc/assets/20210119-214218[1].png" alt="User Details2"  width="270" />
+</span>
+
 
 ### Follow this [link](https://drive.google.com/file/d/16CrNUh_ZPq3qh-9fPmt6Hbkd_cIyLYLl/view?usp=sharing) To preview the video demo of the app.
 #### NB: The car_ownsers_data.csv file takes 10-15 minutes to load completely.

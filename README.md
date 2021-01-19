@@ -11,6 +11,7 @@
  <img src="./doc/assets/user-details2.png" alt="User Details2"  width="270" />
 
 ### Follow this [link](https://drive.google.com/file/d/16CrNUh_ZPq3qh-9fPmt6Hbkd_cIyLYLl/view?usp=sharing) To preview the video demo of the app.
+#### NB: The car_ownsers_data.csv file takes 10-15 minutes to load completely.
 
 <br />
 
